@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #05070d;
+    --bg-card: rgba(13, 19, 33, 0.7);
+    --border-card: rgba(56, 189, 248, 0.15);
+    --accent-blue: #38bdf8;
+    --accent-cyan: #06b6d4;
+    --accent-violet: #818cf8;
+    --accent-indigo: #6366f1;
+    --glow-blue: rgba(56, 189, 248, 0.25);
+    --glow-violet: rgba(129, 140, 248, 0.2);
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: #e2e8f0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Typography Utility Classes */
+.font-display {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.font-geist {
+  font-family: 'Geist', 'Inter', sans-serif;
+}
+
+/* Glassmorphism Panel */
+.os-card {
+  background: rgba(11, 16, 28, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.os-card:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+  box-shadow: 0 12px 40px 0 rgba(56, 189, 248, 0.12), inset 0 0 15px rgba(56, 189, 248, 0.03);
+}
+
+.os-card-interactive {
+  position: relative;
+  overflow: hidden;
+}
+
+.os-card-interactive::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(56, 189, 248, 0.08),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.os-card-interactive:hover::before {
+  left: 100%;
+}
+
+/* Cyber Grid Background */
+.bg-cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+}
+
+.bg-radial-glow {
+  background: radial-gradient(circle at 50% 20%, rgba(30, 58, 138, 0.18) 0%, rgba(5, 7, 13, 0) 70%),
+              radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.12) 0%, rgba(5, 7, 13, 0) 60%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05070d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.25);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.5);
+}
+
+/* Subtle Glowing Pulse */
+@keyframes statusPulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 10px #10b981;
+  }
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 0 2px #10b981;
+  }
+}
+
+.animate-status-pulse {
+  animation: statusPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes cyanPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 5px rgba(6, 182, 212, 0.1);
+  }
+}
+
+.animate-cyan-glow {
+  animation: cyanPulse 3s infinite ease-in-out;
+}
+
+/* Scanline Effect for Booting/Terminal */
+.scanline {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(0, 240, 255, 0.03) 50%,
+    rgba(0, 240, 255, 0.03)
+  );
+  background-size: 100% 4px;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
