@@ -2,8 +2,8 @@
 
 A futuristic, high-performance operating system dashboard portfolio for **Roqaiah Anjum E.** (AI Engineer & Full-Stack Developer), showcasing autonomous agent architectures (OpenClaw Echo), full-stack software systems, verified academic credentials, and interactive CLI tooling.
 
-- **Live Production URL:** [https://YOUR-DOMAIN.com](https://YOUR-DOMAIN.com) *(Placeholder: Update with your custom domain upon Vercel deployment)*
-- **GitHub Repository:** [https://github.com/roqaiahanjum](https://github.com/roqaiahanjum)
+- **Live Production URL:** [https://my-portfolio-blue-iota-57.vercel.app](https://my-portfolio-blue-iota-57.vercel.app)
+- **GitHub Repository:** [https://github.com/roqaiahanjum/My-Portfolio](https://github.com/roqaiahanjum/My-Portfolio)
 
 ---
 
@@ -68,4 +68,4 @@ npm run preview
    - **Install Command:** `npm install`
 4. Click **Deploy**.
 5. Go to **Settings > Domains** to add your custom domain (e.g., `roqaiahanjum.dev` or `roqaiah.com`).
-6. Update the `https://YOUR-DOMAIN.com` placeholder in `index.html` and `README.md` with your live custom domain.
+6. When attaching a custom domain (e.g., `roqaiah.dev`), update canonical and social meta tags in `index.html` and `README.md`.
